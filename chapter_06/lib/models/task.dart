@@ -7,7 +7,7 @@ class Task {
   bool complete;
 
   Task({
-    @required this.id,
+    required this.id,
     this.complete = false,
     this.description = '',
   });
