@@ -7,12 +7,12 @@ class Plan {
   String name = '';
   List<Task> tasks = [];
 
-  Plan({@required this.id, this.name = ''});
+  Plan({required this.id, this.name = ''});
 
   Plan.fromModel(Model model)
       : id = model.id,
-        name = model?.data['name'],
-        tasks = model?.data['task']
+        name = model.data['name'] ?? 'unknown',
+        tasks = model.data['tasks']
                 ?.map<Task>((task) => Task.fromModel(task))
                 ?.toList() ??
             <Task>[];
