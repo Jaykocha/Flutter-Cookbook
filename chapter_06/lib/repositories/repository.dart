@@ -16,7 +16,7 @@ class Model {
   final Map data;
 
   const Model({
-    @required this.id,
+    required this.id,
     this.data = const {},
   });
 }
