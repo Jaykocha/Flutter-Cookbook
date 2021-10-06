@@ -11,7 +11,7 @@ class PlanScreen extends StatefulWidget {
 }
 
 class _PlanScreenState extends State<PlanScreen> {
-  ScrollController scrollController;
+  ScrollController? scrollController;
   Plan get plan => widget.plan;
   @override
   void initState() {
@@ -36,7 +36,7 @@ class _PlanScreenState extends State<PlanScreen> {
 
   @override
   void dispose() {
-    scrollController.dispose();
+    scrollController?.dispose();
     super.dispose();
   }
 
@@ -76,7 +76,7 @@ class _PlanScreenState extends State<PlanScreen> {
             value: task.complete,
             onChanged: (selected) {
               setState(() {
-                task.complete = selected;
+                task.complete = selected ?? false;
               });
             }),
         title: TextFormField(
